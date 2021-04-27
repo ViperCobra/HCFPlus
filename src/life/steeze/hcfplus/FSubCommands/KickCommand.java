@@ -1,5 +1,6 @@
 package life.steeze.hcfplus.FSubCommands;
 
+import life.steeze.hcfplus.FileUtils.ConfigManager;
 import life.steeze.hcfplus.Objects.Faction;
 import life.steeze.hcfplus.HCFPlugin;
 import life.steeze.hcfplus.Exceptions.NotInFaction;
@@ -20,9 +21,9 @@ public class KickCommand implements SubCommand {
             return;
         }
         if(f.removePlayer(target)){
-            p.sendMessage(ChatColor.GOLD + "Success!");
+            p.sendMessage(ConfigManager.SUCCESS);
          } else {
-            p.sendMessage(ChatColor.RED + "Player isn't in your faction");
+            p.sendMessage(ConfigManager.PLAYER_NOT_FOUND);
         }
     }
 }

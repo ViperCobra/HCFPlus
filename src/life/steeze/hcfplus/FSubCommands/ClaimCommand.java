@@ -14,7 +14,7 @@ public class ClaimCommand implements SubCommand {
     public void perform(Player p, String[] args, HCFPlugin plugin) throws NotInFaction {
         Faction f = plugin.getData().getFactionOrError(p);
         if(!f.getLeader().equals(p.getUniqueId())){
-            p.sendMessage(ChatColor.RED + "You must be the leader to use this command!");
+            p.sendMessage(ConfigManager.MUST_BE_LEADER);
             return;
         }
         if (f.hasClaim()) {
@@ -42,6 +42,6 @@ public class ClaimCommand implements SubCommand {
         }
 
         f.setClaim(c);
-        p.sendMessage(ChatColor.YELLOW + "Success!");
+        p.sendMessage(ConfigManager.SUCCESS);
     }
 }

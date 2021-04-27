@@ -1,5 +1,6 @@
 package life.steeze.hcfplus.FSubCommands;
 
+import life.steeze.hcfplus.FileUtils.ConfigManager;
 import life.steeze.hcfplus.Objects.Faction;
 import life.steeze.hcfplus.HCFPlugin;
 import life.steeze.hcfplus.Exceptions.NotInFaction;
@@ -14,12 +15,12 @@ public class InviteCommand implements SubCommand {
     public void perform(Player p, String[] args, HCFPlugin plugin) throws NotInFaction {
         Faction f = plugin.getData().getFactionOrError(p);
         if(!f.getLeader().equals(p.getUniqueId())){
-            p.sendMessage(ChatColor.RED + "You must be the leader to use this command!");
+            p.sendMessage(ConfigManager.MUST_BE_LEADER);
             return;
         }
         Player target = Bukkit.getPlayer(args[1]);
         if (target == null || target.equals(p)) {
-            p.sendMessage(ChatColor.RED + "Invalid target");
+            p.sendMessage(ConfigManager.PLAYER_NOT_FOUND);
             return;
         }
         if(plugin.getData().isPlayerInFaction(target)){
@@ -31,7 +32,7 @@ public class InviteCommand implements SubCommand {
             return;
         }
         plugin.getData().addInvitation(target, f);
-        p.sendMessage(ChatColor.YELLOW + "Invite sent!");
+        p.sendMessage(ConfigManager.SUCCESS);
         target.sendMessage(ChatColor.YELLOW + "You have been invited to join " + f.getColor() + f.getName() + ChatColor.YELLOW + ". Do you accept? " + ChatColor.WHITE + "/f accept");
         new BukkitRunnable() {
              @Override

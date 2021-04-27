@@ -1,6 +1,7 @@
 package life.steeze.hcfplus.Utilities;
 
 import life.steeze.hcfplus.Exceptions.NotInFaction;
+import life.steeze.hcfplus.FileUtils.ConfigManager;
 import life.steeze.hcfplus.Objects.Faction;
 import life.steeze.hcfplus.Objects.Selection;
 import org.bukkit.ChatColor;
@@ -44,7 +45,7 @@ public class PlayerData {
     }
     public Faction getFactionOrError(Player p) throws NotInFaction {
         if(!fPlayers.containsKey(p)){
-            p.sendMessage(ChatColor.RED + "You are not in a faction!");
+            p.sendMessage(ConfigManager.NOT_IN_FACTION);
             throw new NotInFaction();
         }
         return fPlayers.get(p);

@@ -4,6 +4,7 @@ import life.steeze.hcfplus.FileUtils.ConfigManager;
 import life.steeze.hcfplus.FileUtils.FactionsFile;
 import life.steeze.hcfplus.Objects.Claim;
 import life.steeze.hcfplus.Objects.Faction;
+import life.steeze.hcfplus.Timers.AbilitiesTimer;
 import life.steeze.hcfplus.Utilities.ClaimWand;
 import life.steeze.hcfplus.Utilities.ColorGUI;
 import life.steeze.hcfplus.Utilities.PlayerData;
@@ -15,6 +16,7 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 public class HCFPlugin extends JavaPlugin implements CommandExecutor {
 
+    private AbilitiesTimer abilities;
 
     private PlayerData playerData;
     public PlayerData getData(){
@@ -46,6 +48,9 @@ public class HCFPlugin extends JavaPlugin implements CommandExecutor {
         ConfigurationSerialization.registerClass(Faction.class);
         ConfigurationSerialization.registerClass(Claim.class);
         getServer().getPluginManager().registerEvents(new Events(this), this);
+        if(ConfigManager.USE_KITS){
+            abilities = new AbilitiesTimer(this);
+        }
     }
 
     @Override
