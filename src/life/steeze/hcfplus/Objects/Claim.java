@@ -1,5 +1,6 @@
-package life.steeze.hcfplus;
+package life.steeze.hcfplus.Objects;
 
+import life.steeze.hcfplus.HCFPlugin;
 import org.bukkit.*;
 import org.bukkit.configuration.MemorySection;
 import org.bukkit.configuration.serialization.ConfigurationSerializable;

@@ -1,8 +1,8 @@
 package life.steeze.hcfplus.FSubCommands;
 
-import life.steeze.hcfplus.Faction;
+import life.steeze.hcfplus.Objects.Faction;
 import life.steeze.hcfplus.HCFPlugin;
-import life.steeze.hcfplus.PlayerData;
+import life.steeze.hcfplus.Utilities.PlayerData;
 import life.steeze.hcfplus.SubCommand;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;

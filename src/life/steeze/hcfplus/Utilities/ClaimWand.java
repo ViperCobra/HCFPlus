@@ -1,5 +1,6 @@
-package life.steeze.hcfplus;
+package life.steeze.hcfplus.Utilities;
 
+import life.steeze.hcfplus.HCFPlugin;
 import org.bukkit.Material;
 import org.bukkit.NamespacedKey;
 import org.bukkit.inventory.ItemStack;

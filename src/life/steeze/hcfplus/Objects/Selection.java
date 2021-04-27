@@ -1,4 +1,4 @@
-package life.steeze.hcfplus;
+package life.steeze.hcfplus.Objects;
 
 import org.bukkit.Location;
 import org.bukkit.World;

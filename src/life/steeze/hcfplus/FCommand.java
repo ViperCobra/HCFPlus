@@ -1,5 +1,6 @@
 package life.steeze.hcfplus;
 
+import life.steeze.hcfplus.Exceptions.NotInFaction;
 import life.steeze.hcfplus.FSubCommands.*;
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;

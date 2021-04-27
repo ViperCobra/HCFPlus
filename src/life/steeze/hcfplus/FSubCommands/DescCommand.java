@@ -1,10 +1,11 @@
 package life.steeze.hcfplus.FSubCommands;
 
 import life.steeze.hcfplus.*;
+import life.steeze.hcfplus.Exceptions.NotInFaction;
+import life.steeze.hcfplus.FileUtils.ConfigManager;
+import life.steeze.hcfplus.Objects.Faction;
 import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
-
-import java.util.Arrays;
 
 public class DescCommand implements SubCommand {
     @Override

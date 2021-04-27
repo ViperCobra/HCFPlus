@@ -1,5 +1,6 @@
-package life.steeze.hcfplus;
+package life.steeze.hcfplus.Objects;
 
+import life.steeze.hcfplus.HCFPlugin;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.Location;
@@ -160,9 +161,9 @@ public class Faction implements ConfigurationSerializable {
             Bukkit.getPlayer(this.leader).sendMessage(ChatColor.YELLOW + "You are now the leader of your faction!");
     }
 
-    // life.steeze.hcfplus.Faction info display.
+    // life.steeze.hcfplus.Objects.Faction info display.
     public void showInfo(final Player p) {
-        p.sendMessage(ChatColor.YELLOW + "----==== life.steeze.hcfplus.Faction info: " + this.color + this.name + ChatColor.YELLOW + " ====----");
+        p.sendMessage(ChatColor.YELLOW + "----==== life.steeze.hcfplus.Objects.Faction info: " + this.color + this.name + ChatColor.YELLOW + " ====----");
         p.sendMessage(ChatColor.YELLOW + "Description: " + ChatColor.WHITE + this.description);
         p.sendMessage(ChatColor.YELLOW + "DTR: " + ChatColor.WHITE + this.dtr + (this.dtr <= 0 ? ChatColor.RED + "| RAIDABLE" : ""));
         p.sendMessage(ChatColor.YELLOW + "Leader: " + ChatColor.WHITE + (Bukkit.getOfflinePlayer(this.leader).isOnline() ? Bukkit.getPlayer(this.leader).getName() : Bukkit.getOfflinePlayer(this.leader).getName()));
@@ -177,8 +178,8 @@ public class Faction implements ConfigurationSerializable {
             p.sendMessage(name);
         }
         if (this.hasClaim()) {
-            p.sendMessage(ChatColor.GREEN + "life.steeze.hcfplus.Claim start: " + this.claim.start() +
-                    "\n" +"life.steeze.hcfplus.Claim end: " + this.claim.end());
+            p.sendMessage(ChatColor.GREEN + "life.steeze.hcfplus.Objects.Claim start: " + this.claim.start() +
+                    "\n" +"life.steeze.hcfplus.Objects.Claim end: " + this.claim.end());
             if (this.claim.getBounds().contains(p.getLocation().toVector())) {
                 this.claim.showBounds(p);
             }
@@ -194,7 +195,7 @@ public class Faction implements ConfigurationSerializable {
             data.getData().removeFPlayer(Bukkit.getPlayer(id));
         }
         data.getData().removeFaction(this);
-        Bukkit.broadcastMessage(ChatColor.YELLOW + "life.steeze.hcfplus.Faction " + ChatColor.WHITE + this.name + ChatColor.YELLOW + " has been disbanded!");
+        Bukkit.broadcastMessage(ChatColor.YELLOW + "life.steeze.hcfplus.Objects.Faction " + ChatColor.WHITE + this.name + ChatColor.YELLOW + " has been disbanded!");
     }
 
     //Remove player from faction, whether they left or were kicked. Returns true if player was in the faction, false if player was not.

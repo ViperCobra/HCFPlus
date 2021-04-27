@@ -1,4 +1,4 @@
-package life.steeze.hcfplus;
+package life.steeze.hcfplus.Utilities;
 
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;

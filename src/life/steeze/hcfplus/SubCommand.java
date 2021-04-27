@@ -1,5 +1,6 @@
 package life.steeze.hcfplus;
 
+import life.steeze.hcfplus.Exceptions.NotInFaction;
 import org.bukkit.entity.Player;
 
 

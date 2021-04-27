@@ -1,4 +1,4 @@
-package life.steeze.hcfplus;
+package life.steeze.hcfplus.FileUtils;
 
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.plugin.Plugin;

@@ -1,5 +1,7 @@
-package life.steeze.hcfplus;
+package life.steeze.hcfplus.FileUtils;
 
+import life.steeze.hcfplus.Objects.Faction;
+import life.steeze.hcfplus.HCFPlugin;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
 import java.io.File;
